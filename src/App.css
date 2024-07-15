@@ -1,0 +1,69 @@
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.WalkRecord {
+  width: 380px;
+  margin: 50px auto;
+}
+
+.WalkRecordForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.WalkRecordForm label {
+  display: flex;
+  flex-direction: column;
+}
+
+.WalkRecordForm__date, .WalkRecordForm__dist {
+  width: 140px;
+  height: 45px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 10px 10px 0px 0px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.WalkRecordForm__button {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+}
+
+.WalkRecord__history {
+  margin-top: 20px;
+}
+
+.WalkRecord__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.WalkRecord__table {
+  margin: 0px;
+  padding: 20px;
+  border: 2px solid rgb(0, 34, 73);
+  border-radius: 5px;
+  list-style: none;
+}
+
+.WalkRecord__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.WalkRecord__item i {
+  font-size: 18px;
+  margin-left: 5px;
+  cursor: pointer;
+}
