@@ -6,20 +6,22 @@ import { TItem } from '../../types';
 import { WalkRecordForm } from '../WalkRecordForm';
 import { WalkRecordHistory } from '../WalkRecordHistory';
 
+import { isNotValidDate, isNotValidDistance } from "../../validators";
+
 const defaultWalks: TItem[] = [
     {
         id: 3,
-        date: '2024-07-13',
+        date: '13.07.2024',
         distance: 3.4,
     },
     {
         id: 1,
-        date: '2024-07-15',
+        date: '15.07.2024',
         distance: 5.7,
     },
     {
         id: 2,
-        date: '2024-07-14',
+        date: '14.07.2024',
         distance: 14.2,
     },
 ];
@@ -37,6 +39,14 @@ export function Steps() {
 
     const handleSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
+
+        if (!form.date || !form.distance) {
+            return alert("Введите дату и дистанцию!");
+        } else if (isNotValidDate(form.date)) {
+            return alert("Введите дату в формате 16.07.2024");
+        } else if (isNotValidDistance(form.distance)) {
+            return alert("Введите дистанцию в километрах в формате 5.4");
+        }
 
         const walkIndex = walks.findIndex((item: TItem) => item.date === form.date);
         if (walkIndex !== -1) {
